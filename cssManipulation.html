@@ -1,0 +1,47 @@
+<style>
+#change{
+	border: 3px solid black;
+	padding: 2px;
+	display: inline;
+}
+</style>
+
+<script>
+function execute() {
+	let boColorRed = parseInt(document.getElementById('BoColorR').value);
+	let boColorGreen = parseInt(document.getElementById('BoColorG').value);
+	let boColorBlue = parseInt(document.getElementById('BoColorB').value);
+	console.log(typeof boColorBlue);
+	let bordWidth = document.getElementById('BoWidth').value;
+	
+	let bgColorRed = document.getElementById('BGColorR').value;
+	let bgColorGreen = document.getElementById('BGColorG').value;
+	let bgColorBlue = document.getElementById('BGColorB').value;
+	
+	document.getElementById('change').style.borderColor = "rgb(" + boColorRed + ", " + boColorGreen + ", " + boColorBlue + ")";
+	document.getElementById('change').style.borderWidth = bordWidth;
+	document.getElementById('change').style.backgroundColor = "rgb(" + bgColorRed + ", " + bgColorGreen + ", " + bgColorBlue + ")";
+}
+</script>
+
+<html>
+<head>
+<title> JS to edit CSS </title>
+</head>
+
+<body>
+<br><br>
+ <p id="change">This is some dummy text :D</p><br><br><br>
+ <p> Enter a number between 0 and 255 for each color value</p>
+ Border Color Red: <input type="text" id="BoColorR" > <br>
+ Border Color Green: <input type="text" id="BoColorG" > <br>
+ Border Color Blue: <input type="text" id="BoColorB" > <br>
+ Border Width : <input type="text" id="BoWidth" > <br>
+ Background Color Red: <input type="text" id="BGColorR"> <br>
+ Background Color Green: <input type="text" id="BGColorG"> <br>
+ Background Color Blue: <input type="text" id="BGColorB"> <br>
+ <button onclick="execute()">change colors</button>
+ <p class="error"></p>
+
+</body>
+</html>
