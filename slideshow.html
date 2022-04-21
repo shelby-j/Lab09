@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>A lovely slideshow of some random images on my pc</h2>
+<div class="slideshow">
+  <img src="chese.jpg" style="width: 200px; height: 200px">
+</div>
+
+<div class="slideshow">
+  <img src="stripes.png" style="width: 200px; height: 200px">
+</div>
+
+<div class="slideshow">
+  <img src="Octopus.png" style="width: 200px; height: 200px">
+</div>
+
+<div class="slideshow">
+  <img src="colorfulMountains in peru.jpeg" style="width: 200px; height: 200px">
+</div>
+
+<div class="slideshow">
+  <img src="paper.jpg" style="width: 200px; height: 200px">
+</div>
+
+<button onclick="nextSlide(-1)">Prev</button>
+<button onclick="nextSlide(1)">Next</button>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function nextSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("slideshow");
+  if (n > slides.length) {
+	slideIndex = 1;
+  }    
+  if (n < 1) {
+	slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+
+</script>
+</body>
+</html> 
